@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter2Nitter",
+  "author": "Jim Adamson",
+  "version": "0.0.1",
+  "description": "Redirect from Twitter to Nitter",
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "scripts/service_worker.js"
+  },
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ]
+}
