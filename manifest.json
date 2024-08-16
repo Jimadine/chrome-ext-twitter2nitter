@@ -4,11 +4,13 @@
   "author": "Jim Adamson",
   "version": "0.0.1",
   "description": "Redirect from Twitter to Nitter",
+  "minimum_chrome_version": "121",
   "options_ui": {
     "page": "options/options.html",
     "open_in_tab": true
   },
   "background": {
+    "scripts": ["scripts/service_worker.js"],
     "service_worker": "scripts/service_worker.js"
   },
   "permissions": [
