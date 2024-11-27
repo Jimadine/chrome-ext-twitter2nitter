@@ -1,10 +1,15 @@
+if (typeof browser === "undefined") {
+  var xbrowser = chrome;
+} else {
+  var xbrowser = browser;
+}
 let redirectionUrl;
 
-chrome.storage.local.get("redirection_url", function (result) {
+xbrowser.storage.local.get("redirection_url", function (result) {
   redirectionUrl = result.redirection_url;
 });
 
-chrome.storage.onChanged.addListener(function (changes, areaName) {
+xbrowser.storage.onChanged.addListener(function (changes, areaName) {
   if (areaName === "local" && changes.redirection_url) {
     redirectionUrl = changes.redirection_url.newValue;
   }
@@ -17,8 +22,8 @@ const navigateGuard = (event) => {
 
   if (isTargetDomain) {
     const redirectUrl = `${redirectionUrl}${parsedUrl.pathname}${parsedUrl.search}${parsedUrl.hash}`;
-    chrome.tabs.update(event.tabId, { url: redirectUrl });
+    xbrowser.tabs.update(event.tabId, { url: redirectUrl });
   }
 };
 
-chrome.webNavigation.onBeforeNavigate.addListener(navigateGuard);
+xbrowser.webNavigation.onBeforeNavigate.addListener(navigateGuard);
