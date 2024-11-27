@@ -4,4 +4,4 @@ Yet another Twitter/X redirection browser extension. Free, unencumbered and mini
 
 You can test it as follows:
 * In Chrom(e|ium) via `chrome://extensions`, with `Developer Mode` enabled, click `Load unpacked`.
-* In Firefox via `about:debugging#/runtime/this-firefox` click `Load Temporary Add-on...`.
+* In Firefox via `about:debugging#/runtime/this-firefox` click `Load Temporary Add-on...`. Choose the `manifest.json` file.
