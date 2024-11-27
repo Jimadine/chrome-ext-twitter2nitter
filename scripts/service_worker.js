@@ -1,8 +1,4 @@
-if (typeof browser === "undefined") {
-  var xbrowser = chrome;
-} else {
-  var xbrowser = browser;
-}
+var xbrowser = typeof browser !== "undefined" ? browser : chrome;
 let redirectionUrl;
 
 xbrowser.storage.local.get("redirection_url", function (result) {
