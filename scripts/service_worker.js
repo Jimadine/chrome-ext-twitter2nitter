@@ -2,7 +2,7 @@ var xbrowser = typeof browser !== "undefined" ? browser : chrome;
 let redirectionUrl;
 
 xbrowser.storage.local.get("redirection_url", function (result) {
-  redirectionUrl = result.redirection_url;
+  redirectionUrl = result.redirection_url || "https://xcancel.com";
 });
 
 xbrowser.storage.onChanged.addListener(function (changes, areaName) {
